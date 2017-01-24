@@ -6,6 +6,6 @@ let package = Package(
         Target(name: "Ogra")
     ],
     dependencies: [
-        .Package(url: "https://github.com/thoughtbot/Argo.git", majorVersion: 4)
+        .Package(url: "https://github.com/RLovelett/Argo.git", majorVersion: 4)
     ]
 )
