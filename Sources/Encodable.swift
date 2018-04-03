@@ -86,13 +86,13 @@ extension Optional where Wrapped: Collection & ExpressibleByDictionaryLiteral, W
 	}
 }
 
-extension Collection where Self: ExpressibleByArrayLiteral, Self.Element: Encodable, Iterator.Element: Encodable {
+extension Collection where Self: ExpressibleByArrayLiteral, Self.Element: Encodable {
 	public func encode() -> JSON {
 		return JSON.array(self.map { $0.encode() })
 	}
 }
 
-extension Optional where Wrapped: Collection & ExpressibleByArrayLiteral, Wrapped.Element: Encodable, Wrapped.Iterator.Element == Wrapped.Element {
+extension Optional where Wrapped: Collection & ExpressibleByArrayLiteral, Wrapped.Element: Encodable {
 	public func encode() -> JSON {
 		return self.map { $0.encode() } ?? .null
 	}
